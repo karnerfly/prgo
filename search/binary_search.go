@@ -1,5 +1,6 @@
 package search
 
+// Classic Binary Search Function. Time Complexity - O(log(n)), Space Complexity - O(1)
 func BinarySearch(data []int, key int) int {
 	var (
 		mid   int

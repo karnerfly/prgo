@@ -37,3 +37,10 @@ func removeFromHeap(arr []int, n int) int {
 	heapify(arr, n, 0)
 	return elem
 }
+
+/*  How Implemented?
+
+1. build the heap from the given dataset (all elements should maintain this criteria [root element is always smaller than its children])
+2. remove the first element from the heap, put the last element at top and reheapify the heap
+3. heapify starts from inner most node that is (size/2 - 1)
+*/

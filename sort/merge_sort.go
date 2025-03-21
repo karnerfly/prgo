@@ -8,7 +8,7 @@ func MergeSort(data []int) {
 }
 
 func mergeSort(arr []int, start, end int) {
-	if start >= end {
+	if start == end {
 		return
 	}
 
@@ -50,3 +50,10 @@ func merge(arr []int, l1, u1, l2, u2 int) {
 		arr[i] = tmp[k]
 	}
 }
+
+/*  How Implemented?
+
+1. find the mid of the dataset
+2. divid the dataset into two parts until single element remains in the dataset
+3. merge the parts in sorted manner
+*/
