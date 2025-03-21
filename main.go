@@ -10,6 +10,8 @@ func main() {
 	// i := search.BinarySearch(data, 11)
 	// fmt.Println(i)
 
-	root := tree.NewSimpleTree()
+	data := []int{19, 29, 32, 6, 75, 31, 10, 2, 23, 1, 90}
+	root := tree.NewBST(data)
 	tree.PrettyPrint(root)
+	// fmt.Println(root.Height())
 }

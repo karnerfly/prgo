@@ -3,6 +3,7 @@ package tree
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"strings"
 )
@@ -13,31 +14,34 @@ func NewSimpleTree() *Node {
 	fmt.Scanf("%d", &data)
 	root := NewNode(data)
 	buildSimpleTree(root)
+	root.height = int(math.Max(float64(root.left.Height()), float64(root.right.Height())) + 1)
 	return root
 }
 
-func buildSimpleTree(root *Node) {
+func buildSimpleTree(node *Node) {
 	var (
 		yes  bool
 		data int
 	)
 
-	yes = getChoice(fmt.Sprintf("Want to enter to the left of %d? (yes or no): ", root.data))
+	yes = getChoice(fmt.Sprintf("Want to enter to the left of %d? (yes or no): ", node.data))
 	if yes {
 		fmt.Print("Enter Data: ")
 		fmt.Scanf("%d", &data)
 		node := NewNode(data)
-		root.left = node
-		buildSimpleTree(root.left)
+		node.left = node
+		buildSimpleTree(node.left)
+		node.height = int(math.Max(float64(node.left.Height()), float64(node.right.Height())) + 1)
 	}
 
-	yes = getChoice(fmt.Sprintf("Want to enter to the right of %d? (yes or no): ", root.data))
+	yes = getChoice(fmt.Sprintf("Want to enter to the right of %d? (yes or no): ", node.data))
 	if yes {
 		fmt.Print("Enter Data: ")
 		fmt.Scanf("%d", &data)
 		node := NewNode(data)
-		root.right = node
-		buildSimpleTree(root.right)
+		node.right = node
+		buildSimpleTree(node.right)
+		node.height = int(math.Max(float64(node.left.Height()), float64(node.right.Height())) + 1)
 	}
 }
 
