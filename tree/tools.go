@@ -26,7 +26,7 @@ func prettyPrint(node *Node, level int) {
 		for i := 0; i < level; i++ {
 			fmt.Print("\t")
 		}
-		fmt.Println("----->", node.data)
+		fmt.Println("|---->", node.data)
 	}
 
 	prettyPrint(node.left, level+1)
