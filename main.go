@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
-	"main/sort"
+	"main/huffman"
 )
 
 func main() {
-	data := []int{19, 29, 32, 6, 75, 31, 17}
-	sort.MergeSort(data)
-	fmt.Println(data)
+	text := "Hello How are you? Hope so well doing good"
+	h := huffman.New(text)
+	series := h.Encode()
+	fmt.Println("Original:", len(text)*8, "bytes")
+	fmt.Println("Compressed:", len(series), "bytes")
 }
