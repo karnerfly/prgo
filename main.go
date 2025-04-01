@@ -6,10 +6,11 @@ import (
 )
 
 func main() {
-	// text := "Hello How are you? Hope so well doing good"
-	// h := huffman.New(text)
-	// series := h.Encode()
-	// fmt.Println("Original:", len(text)*8, "bytes")
-	// fmt.Println("Compressed:", len(series), "bytes")
-	fmt.Println(conv.ConvertInfixToPostfix("a*b+(c-d)/e*f"))
+	// str := "Rony Chutiya, bokachoda!!!!"
+	// h := huffman.New(str)
+	// n := h.Encode()
+
+	// fmt.Printf("Original size %d, Compressed size %d\n", len(str)*8, len(n))
+
+	fmt.Println(conv.CheckBalancedExpr("[]()"))
 }
